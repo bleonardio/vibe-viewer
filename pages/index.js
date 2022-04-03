@@ -22,7 +22,7 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <Link href="/vibe-viewer/playlist-selection">
+          <Link href="/vibe-viewer/authenticate">
             <a className={styles.card}>
               <h2>Get Started &rarr;</h2>
               <p>Let's take a look at your playlists!</p>
