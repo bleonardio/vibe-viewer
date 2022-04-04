@@ -1,10 +1,10 @@
 import styles from '../../styles/Home.module.scss'
 import Link from 'next/link'
-import { PlaylistListView } from "../../components/PlaylistListView";
 import { getMyPlaylists } from "../../lib/apis/Spotify";
 import { useEffect, useState } from "react";
 import Loading from "../../components/atoms/Loading";
 import Error from "../../components/atoms/Error";
+import { Playlists } from "../../components/molecules/Playlists";
 
 export default function PlaylistSelection() {
   const { status, playlists, error } = usePlaylists();
@@ -56,12 +56,7 @@ export default function PlaylistSelection() {
     <div className={styles.container}>
       <main className={styles.main}>
         <h1>Select a Playlist</h1>
-        {playlists.items.length === 0  && (
-          <p>you don't have any playlists :( go make one and come back!</p>
-        )}
-        {playlists.items.length > 0  && playlists.items.map(
-          (playlist) => <PlaylistListView playlist={playlist} key={playlist.id} />
-        )}
+        <Playlists playlists={playlists} />
         <p className={styles.description}>
           <Link href="/">
             <a>&larr; Go Back</a>
