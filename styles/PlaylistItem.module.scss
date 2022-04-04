@@ -1,0 +1,14 @@
+@import "variables";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 8px 24px;
+
+  &:hover {
+    background: $persian-green;
+    transition: all 0.25s ease;
+    cursor: pointer;
+  }
+}
